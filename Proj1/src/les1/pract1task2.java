@@ -1,6 +1,7 @@
+package les1;
 import javax.swing.JOptionPane;
 
-public class MainClass {
+class Task2 {
 
     public static void main(String[] args) {
         String b;
