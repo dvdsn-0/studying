@@ -13,34 +13,26 @@ import les4.base.WeightMeter;
 
 public class Controller
 {
-	public static Double lightBoatMaxWeight = 10000.0; //макс. вес легкого судна
+    public static Double lightBoatMaxWeight = 10000.0; //макс. вес легкого судна
     public static Integer lightBoatMaxHeight = 7000; // макс. допустимая высота судна
-    public static Integer stationMaxHeight = 10000; // макс. высота контр. пункта
+    public static Integer stationMaxHeight = 5000; // макс. высота контр. пункта
 
     public static Integer lightBoatPrice = 100; // RUB
     public static Integer cargoBoatPrice = 250; // грузовое судно, плата за проезд
     public static Integer AdditionalPrice = 200; // если вес превышает допустимый
 
-    public static Integer maxAcessSpeed = 30; // km/h
+    public static Integer maxAcessSpeed = 50; // km/h
     public static Integer speedFineStep = 20; // km/h
     public static Integer finePerGrade = 500; // RUB
     public static Integer dangerSpeed = 90; // km/h
 
     public static void main(String[] args)
     {
-        for(Integer i = 0; i < 10; i++)
+        for(Integer i = 0; i < 40; i++)
         {
             Ship ship = FixSpeed.getNextShip();
             System.out.println(ship);
             System.out.println("Скорость: " + FixSpeed.getShipSpeed(ship) + " км/ч");
-
-            /**
-             * Пропускаем спец. суда 
-             */
-            if(ship.isSpecial()) {
-                openWay();
-                continue;
-            }
 
             /**
              * Проверка на наличие номера в списке номеров нарушителей
@@ -60,6 +52,14 @@ public class Controller
             }
 
             /**
+             * Пропускаем спец. суда
+             */
+            if(ship.isSpecial()) {
+                openWay();
+                continue;
+            }
+
+            /**
              * Проверяем высоту и массу судна, вычисляем стоимость проезда
              */
             Integer shipHeight = ship.getHeight();
@@ -75,14 +75,14 @@ public class Controller
                 //Грузовое судно
                 if(weight > lightBoatMaxWeight)
                 {
-                    price = lightBoatPrice;
+                    price = cargoBoatPrice;
                     if(ship.hasVehicle()) {
                         price = price + AdditionalPrice;
                     }
                 }
                 //Пассажирское судно
                 else {
-                    price = cargoBoatPrice;
+                    price = lightBoatPrice;
                 }
             }
             else {
