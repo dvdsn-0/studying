@@ -26,7 +26,7 @@ public class Task1 {
             array[array.length - 1 - i] = symbol;
         }
 
-        for(char name : array) {
+        for (char name : array) {
             System.out.print(name);
         }
     }
