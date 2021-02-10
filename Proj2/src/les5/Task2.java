@@ -17,7 +17,7 @@ public class Task2 {
                 count++;
             }
         }
-        System.out.println("В предложении " + count + " слов");
+        System.out.println("В предложении " + (count + 1) + " слов");
     }
 
 }
