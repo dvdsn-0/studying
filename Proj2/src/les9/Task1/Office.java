@@ -1,3 +1,5 @@
+package les9.Task1;
+
 import java.util.Hashtable;
 
 public class Office {
@@ -30,7 +32,7 @@ public class Office {
         int r = 0;
         while (e.hasMoreElements()) {
             m = e.nextElement();
-            if (m.name == n) {
+            if (m.name.equalsIgnoreCase(n)) {
                 r = m.oklad;
             }
         }
@@ -38,7 +40,7 @@ public class Office {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Office().getZp("Сидоров"));
+        System.out.println(new Office().getZp("СиДоров"));
     }
 
 }
