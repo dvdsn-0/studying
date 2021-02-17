@@ -35,7 +35,7 @@ public class Main {
         var e = new Main().car;
         int r = 0;
         for (var item : e) {
-            if (item.name == n) {
+            if (item.name.equals(n)) {
                 r = item.num;
             }
         }
@@ -120,6 +120,7 @@ public class Main {
         System.out.println("Введите регион");// Без проверки на длину
         region = Integer.parseInt(reader.readLine());
         new Main().addLine(name, region);
+        System.out.println("Запись добавлена");
     }
 
 }
