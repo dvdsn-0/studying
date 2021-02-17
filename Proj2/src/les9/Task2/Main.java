@@ -118,8 +118,9 @@ public class Main {
 
         System.out.println("Введите имя");
         name = reader.readLine();
-        int regreg = 54;
-        new Main().addLine(name, regreg);
+        System.out.println("Введите регион");// Без проверки на длину
+        region = Integer.parseInt(reader.readLine());
+        new Main().addLine(name, region);
     }
 
 }
