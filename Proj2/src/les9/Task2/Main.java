@@ -107,10 +107,9 @@ public class Main {
         int region = Integer.parseInt(reader.readLine());
         if (new Main().addLine(name, num, region)) {
             System.out.println("Запись добавлена");
-        }
-        else {
+        } else {
             System.out.println("Номер занят");
-        };
+        }
 
         /**
          * Добавление записи авто
