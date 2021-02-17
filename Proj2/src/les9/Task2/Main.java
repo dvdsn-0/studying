@@ -67,7 +67,7 @@ public class Main {
 
     // Добавление записи авто
     static boolean addLine(String name, int region) {
-        car.add(new Line (name, (int) (Math.random() * 1000 + 1), region));
+        car.add(new Line(name, (int) (Math.random() * 1000 + 1), region));
         return true;
     }
 
@@ -107,10 +107,9 @@ public class Main {
         int region = Integer.parseInt(reader.readLine());
         if (new Main().addLine(name, num, region)) {
             System.out.println("Запись добавлена");
-        }
-        else {
+        } else {
             System.out.println("Номер занят");
-        };
+        }
 
         /**
          * Добавление записи авто
