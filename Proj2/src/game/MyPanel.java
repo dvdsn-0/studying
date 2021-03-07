@@ -35,14 +35,13 @@ public class MyPanel extends JPanel {
         heart6 = heart1;
 
 
-
-		timerDraw = new Timer(5, new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				repaint();//запускаем paintComponent, который отвечает за отображение элементов на фрейме
-			}
-		});
-		timerDraw.start();
+        timerDraw = new Timer(5, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                repaint();//запускаем paintComponent, который отвечает за отображение элементов на фрейме
+            }
+        });
+        timerDraw.start();
     }
 
 
